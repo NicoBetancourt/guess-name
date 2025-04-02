@@ -8,6 +8,7 @@ from agent import chat_with_agent
 st.set_page_config(page_title="Guess my PIN", page_icon="💬")
 st.title("¡Adivina mi PIN!")
 gemini_api_key = st.secrets["GEMINI_API_KEY"]
+secret_code = st.secrets["SECRET_CODE"]
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -41,7 +42,7 @@ if user_input:
     
     # Simulate assistant response
     with st.chat_message("assistant"):
-        response = chat_with_agent(st.session_state.messages,gemini_api_key)
+        response = chat_with_agent(st.session_state.messages,gemini_api_key,secret_code)
         current_time = datetime.datetime.now().strftime("%H:%M:%S")
         st.write(response)
         st.caption(current_time)
