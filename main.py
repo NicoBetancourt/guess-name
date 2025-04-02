@@ -5,9 +5,8 @@ import streamlit as st
 from agent import chat_with_agent
 
 # Set page title and configuration
-st.set_page_config(page_title="Guess my Name", page_icon="💬")
-st.title("¡Adivina mi nombre!")
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+st.set_page_config(page_title="Guess my PIN", page_icon="💬")
+st.title("¡Adivina mi PIN!")
 gemini_api_key = st.secrets["GEMINI_API_KEY"]
 
 if "messages" not in st.session_state:
